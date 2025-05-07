@@ -1,68 +1,53 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+@import "tailwindcss";
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  background-color: #FEF8F0;
+  font-family: 'Poppins', sans-serif;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+
+/* Tailwind-friendly custom styles for react-calendar */
+@layer components {
+  .react-calendar {
+    @apply w-full max-w-md mx-auto;
+  }
+
+  .react-calendar__tile {
+    @apply text-sm py-2 transition duration-200;
+  }
+
+  .react-calendar__tile--now {
+    @apply bg-yellow-100 text-yellow-700 font-semibold;
+  }
+
+  .react-calendar__tile--active {
+    @apply bg-[#7E3D2D] text-white rounded-lg;
+  }
+
+  .react-calendar__tile:hover {
+    @apply bg-[#9f4a39] text-white;
+  }
+
+  .react-calendar__navigation button {
+    @apply text-sm font-medium px-2 py-1 hover:bg-gray-200 rounded;
+  }
+
+  .react-calendar__month-view__weekdays {
+    @apply text-gray-500 text-xs uppercase;
+  }
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+.react-calendar {
+  width: 100%;
+  max-width: 300px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.react-calendar__tile--active {
+  background-color: #7E3D2D !important;
+  color: white !important;
+  border-radius: 0.375rem;
 }
+
