@@ -1,9 +1,10 @@
 import React from 'react'
+import OccasionSlider from '../components/OccasionSlider'
 
 export default function Gifts() {
   return (
-    <div>
-      <h1>Gifts</h1>
+    <div className='p-14'>
+      <OccasionSlider/>
     </div>
   )
 }

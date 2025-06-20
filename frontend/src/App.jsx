@@ -13,7 +13,6 @@ import Step01 from './components/Step01.jsx';
 import Step02 from './components/Step02.jsx';
 
 function App() {
-
   return (
     <div>
       <BrowserRouter>
@@ -35,4 +34,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
